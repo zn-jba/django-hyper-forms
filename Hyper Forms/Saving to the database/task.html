@@ -1,0 +1,17 @@
+<h2>Description</h2>
+
+<p>It's time to admit new people to our club! Our visitors need a link to fill out our form. Also, let's show the list of the current participants on the main page.</p>
+
+<h2>Objectives</h2>
+
+<p>First thing's first, you need to create a button or a link leading to the form page on your index page. Now since the introduction form is ready, we don't need the <code class="java">Coming soon</code> line anymore. Let's replace it with a <code class="java">Click here to join!</code> button.</p>
+
+<p>Since we need to store the data on our members in the database, let's create a <code class="java">Participant</code> model in <code class="java">models.py</code>. It will have the same three fields as our previous form: <code class="java">name</code>, <code class="java">age</code>, and <code class="java">favorite_book</code>. A participant should fill out the form and send a <code class="java">POST</code> request. After that, you need to save the received data as a <code class="java">Participant</code> object. You don't need to print it.</p>
+
+<p>Let's come back to <code class="java">index.html</code>, let's add the <code class="java">Current club participants:</code> counter below the join invitation link. At this step, you need to show the singed members of your club. Construct a table that will show the <code class="java">name</code>, <code class="java">age</code> and a <code class="java">favorite book</code> of all our members. If there are no participants, display the following line: <code class="java">No participants so far. Be the first!</code></p>
+
+<h2>Examples</h2>
+
+<p><strong>Example 1: </strong><em>The landing page</em></p>
+
+<p><img alt="" src="https://ucarecdn.com/bbd054f7-a70b-4102-895a-6f0bd45e0826/"></p>

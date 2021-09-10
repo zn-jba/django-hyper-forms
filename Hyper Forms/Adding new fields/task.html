@@ -1,0 +1,21 @@
+<h2><strong style="background-color: transparent; color: #000000; font-size: 11pt; font-variant: normal;"></strong>Description</h2>
+
+<p>Now the Bookclub's website is ready to welcome its first visitors! But there's one final touch. Let's set up an admin panel and add an opportunity to create and edit the form's fields from the admin panel instead of changing the project code every time.</p>
+
+<p>First, let's discuss dynamic form field editing. We can't edit the program's code on the fly, right? Dynamic editing is all about database tables. Let's create four new models in <code class="java">models.py</code>.</p>
+
+<h2><img alt="" src="https://ucarecdn.com/fcbf8e74-a075-42a7-861a-c62f9044ea37/"></h2>
+
+<p>The <code class="java">FormModel</code> will store information on the existing forms. Each <code class="java">FormModel</code> can have <strong>N</strong> <code class="java">FormField</code> instances as children. <code class="java">FormField</code> stores data important for every field. For now, it should include the field's name, label, and type. We will also need a <code class="java">FormData</code> table to save the inserted data, and a <code class="java">FormRecord</code> to connect all inserted values.</p>
+
+<h2>Objectives</h2>
+
+<p>First, add a new <strong>superuser</strong>: <code class="java">admin</code> with an <code class="java">admin</code> password. If you plan to set up a real page, don't forget to make your passwords stronger!</p>
+
+<p>Once all the migrations are made, you need to register the models so that they can be accessible from the admin panel. Let's register the <code class="java">FormModel</code> and a <code class="java">FormField</code>. Now, let's open the <code class="java">localhost:{port}/admin</code> page and add a new form with <code class="java">name="participants"</code> and the three fields we already have — <code class="java">name</code>, <code class="java">age</code>, and <code class="java">favorite_book</code>.</p>
+
+<p>After that, you need to update your existing views. On the <code class="java">register</code> page (the <code class="java">GET</code> part), get all the objects of the <code class="java">FormField</code> table with a <code class="java">participants</code> parent form name. Modify the HTML template so that the fields received from the database can be presented on the page as input fields with the name, label, and type of each received field respectively.</p>
+
+<p>For the <code class="java">POST</code> request, save the received data to new <code class="java">FormData</code> instances, one per input field.</p>
+
+<p>Finally, on the index page, collect the data from the <code class="java">FormData</code> table and show it on the page just like in the previous stage. Keep in mind that the admin can add or remove form fields, so the data on the index page should always be up to date. So if the admin adds a new field, say, <code class="java">birthday</code>, it should be automatically displayed on the main page in the <code class="java">participants</code> table. If there are no participants, display <code class="java">No participants yet! Be the first!</code> line.</p>

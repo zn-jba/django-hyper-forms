@@ -1,0 +1,20 @@
+<h2>Description</h2>
+
+<p>Now, when our visitors see the message, we can work on the member registration form. </p>
+
+<h2>Objectives</h2>
+
+<p>Create a form containing three fields. The first one is <code class="java">name</code>. It should be of the <strong>text</strong> type and contain the <code class="java">your name</code> label. The next one is <code class="java">age</code>. Make it of the <strong>number</strong> type<span style="color: #ff4363;"> </span>with the <code class="java">your age</code> label. Since we try to set up a reading club, ask newcomers about their favorite book. Add the third field and call it <code class="java">favorite_book</code>. Assign the <code class="java">your favorite book</code> label to it. You can represent it in any way you'd like, but the form page should be reachable at the <code class="java">/register</code> URL. Add these three fields to your form and add the <code class="java">Submit</code> button. </p>
+
+<p>You can use the Django built-in <code class="java">Form</code> class to create a form instance and then put it to an HTML template of the page. At this point, we need to print the data to the terminal, so iterate it over the form data in the corresponding view and print it in the following format:</p>
+
+<pre><code class="language-no-highlight">%field_name_1%: %value_1%
+%field_name_2%: %value_2%</code></pre>
+
+<h2>Examples</h2>
+
+<p><strong>Example 1: </strong><em>An</em><strong> </strong><em>example of the output</em></p>
+
+<pre><code class="language-no-highlight">name: Bob
+age: 19
+favorite_book: Romeo and Juliet</code></pre>
