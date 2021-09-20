@@ -1,7 +1,0 @@
-type: framework
-content:
-- Welcome page
-- Creating a form
-- Saving to the database
-- Adding new fields
-current_task: 2

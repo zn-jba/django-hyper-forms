@@ -1,0 +1,36 @@
+{% extends "forms/base.html" %}
+
+{% block page_content %}
+    <main>
+        <h2>Welcome to the reading club</h2>
+        <p>This is the best reading club you can even think of, please join.</p>
+        <button>
+            <a href="{% url 'forms:register' %}">Click here to join!</a>
+        </button>
+
+        {% if form_records %}
+            <br><br>
+            <table>
+                <caption>Current club participants:</caption>
+                <thead>
+                <tr>
+                    {% for field in fields %}
+                        <th>{{ field.name }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for form_data in form_records %}
+                    <tr>
+                        {% for value in form_data %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No participants yet! Be the first!</p>
+        {% endif %}
+    </main>
+{% endblock %}

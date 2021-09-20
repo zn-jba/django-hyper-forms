@@ -1,3 +1,2 @@
-https://github.com/hyperskill/hs-test-python/archive/release.tar.gz
-Django==3.1.5
-requests==2.25.1
+django
+requests

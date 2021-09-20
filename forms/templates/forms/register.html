@@ -1,0 +1,21 @@
+{% extends "forms/base.html" %}
+
+{% block page_content %}
+    <main>
+        {% if fields %}
+            <form action="{% url 'forms:register' %}" method="post" novalidate>
+            {% csrf_token %}
+            {% for field in fields %}
+                <label for="{{ field.name }}">{{ field.label }}</label><br>
+                <input id="{{ field.name }}"
+                       name="{{ field.name }}"
+                       required
+                       type="{{ field.type }}">
+                <br>
+            {% endfor %}
+        {% endif %}
+        <br>
+        <button type="submit">Submit</button>
+        </form>
+    </main>
+{% endblock %}
